@@ -14,6 +14,14 @@
 	</properties>
 
 	<dependencies>
+
+		<!-- Linking Backend to UI -->
+		<dependency>
+			<groupId>com.springmvc</groupId>
+			<artifactId>shopbackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- JAVA EE API -->
 		<dependency>
 			<groupId>javax</groupId>
@@ -30,21 +38,21 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- SPRING  -->
+		<!-- SPRING -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
-		<!-- JSTL  -->
+
+		<!-- JSTL -->
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
