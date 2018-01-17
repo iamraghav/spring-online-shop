@@ -1,6 +1,10 @@
+html {
+	height: 100%;
+}
 
 body {
   padding-top: 70px;
+  height: 100%;
 }
 
 .slide-image {
@@ -44,8 +48,23 @@ body {
 }
 
 footer {
-	margin: 50px 0;
+	margin: 0;
 }
 
+/*Custom Styling*/
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.content {
+	padding-bottom: 60px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 15px;
+	height: 60px;
+}
 
 
