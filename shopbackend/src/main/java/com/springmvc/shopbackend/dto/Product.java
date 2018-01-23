@@ -3,30 +3,49 @@ package com.springmvc.shopbackend.dto;
 import java.util.UUID;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
 public class Product {
 
-	// private fieds
+	// private fields
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	private String code;
+	
 	private String name;
+	
 	private String brand;
+	
+	@JsonIgnore
 	private String description;
+	
 	@Column(name = "unit_price")
 	private double unitPrice;
+	
 	private int quantity;
+	
 	@Column(name = "is_active")
+	@JsonIgnore
 	private boolean active;
+	
 	@Column(name= "category_id")
-	private int category_id;
+	@JsonIgnore
+	private int categoryId;
+	
 	@Column(name = "supplier_id")
+	@JsonIgnore
 	private int supplierId;
+	
 	private int purchases;
+	
 	private int views;
 	
 	// default constructor
@@ -85,10 +104,10 @@ public class Product {
 		this.active = active;
 	}
 	public int getCategory_id() {
-		return category_id;
+		return categoryId;
 	}
 	public void setCategory_id(int category_id) {
-		this.category_id = category_id;
+		this.categoryId = category_id;
 	}
 	public int getSupplierId() {
 		return supplierId;

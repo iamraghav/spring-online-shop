@@ -58,7 +58,7 @@ public class ProductDAOImpl implements ProductDAO {
 		return false;
 	}
 
-	//Delete
+	// Delete
 	@Override
 	public boolean delete(Product product) {
 		try {
@@ -69,39 +69,26 @@ public class ProductDAOImpl implements ProductDAO {
 		}
 		return false;
 	}
-	
-	
 
 	@Override
 	public List<Product> listActiveProducts() {
-		String selectActiveProducts ="FROM Product WHERE active = :active";
-		return sessionFactory
-					.getCurrentSession()
-						.createQuery(selectActiveProducts, Product.class)
-							.setParameter("active", true)
-								.getResultList();
+		String selectActiveProducts = "FROM Product WHERE active = :active";
+		return sessionFactory.getCurrentSession().createQuery(selectActiveProducts, Product.class)
+				.setParameter("active", true).getResultList();
 	}
 
 	@Override
 	public List<Product> listActiveProductsByCategory(int categoryId) {
-		String selectActiveProductsByCategory ="FROM Product WHERE active = :active AND categoryId = :categoryId";
-		return sessionFactory
-					.getCurrentSession()
-						.createQuery(selectActiveProductsByCategory, Product.class)
-							.setParameter("active", true)
-							.setParameter("categoryId", categoryId)
-								.getResultList();
+		String selectActiveProductsByCategory = "FROM Product WHERE active = :active AND categoryId = :categoryId";
+		return sessionFactory.getCurrentSession().createQuery(selectActiveProductsByCategory, Product.class)
+				.setParameter("active", true).setParameter("categoryId", categoryId).getResultList();
 	}
 
 	@Override
 	public List<Product> getLatestActiveProducts(int count) {
-		return sessionFactory
-				.getCurrentSession()
-					.createQuery("FROM Product WHERE active = :active ORDER BY id", Product.class)
-						.setParameter("active", true)
-							.setFirstResult(0)
-							.setMaxResults(count)
-								.getResultList();
+		String selectLatestActiveProducts = "FROM Product WHERE active = :active ORDER BY id";
+		return sessionFactory.getCurrentSession().createQuery(selectLatestActiveProducts, Product.class)
+				.setParameter("active", true).setFirstResult(0).setMaxResults(count).getResultList();
 	}
 
 }

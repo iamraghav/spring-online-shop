@@ -25,7 +25,8 @@ public class ProductTestCase {
 		productDAO = (ProductDAO) context.getBean("productDAO");
 	}
 
-	/* @Test
+	/*
+	@Test
 	 public void testCRUDProduct() {
 	
 	 // Create operation
@@ -52,7 +53,7 @@ public class ProductTestCase {
 	 true, productDAO.delete(product));
 	
 	 // list
-	 assertEquals("Something went wrong while fetching the list of products!", 4,
+	 assertEquals("Something went wrong while fetching the list of products!", 5,
 	 productDAO.list().size());
 	
 	 }
@@ -60,16 +61,17 @@ public class ProductTestCase {
 	
 	@Test
 	public void testListOfActiveProducts(){
-		assertEquals("Something went wrong while fetching active records",4,productDAO.listActiveProducts().size());
+		assertEquals("Something went wrong while fetching active records",5,productDAO.listActiveProducts().size());
 	}
 	@Test
 	public void testListOfActiveProductsByCategory(){
-		assertEquals("Something went wrong while fetching active records",4,productDAO.listActiveProductsByCategory(3).size());
+		assertEquals("Something went wrong while fetching active records",3,productDAO.listActiveProductsByCategory(3).size());
 	}
 	
 	@Test
 	public void testGetLatestActiveProducts(){
 		assertEquals("Something went wrong while fetching latest active records",3,productDAO.getLatestActiveProducts(3).size());
 }
+
 
 }

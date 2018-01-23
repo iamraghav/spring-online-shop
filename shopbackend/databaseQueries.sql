@@ -36,7 +36,7 @@ VALUES ('Monalisa', 'Parida', 'SUPPLIER', true, '12345', 'mona@gmail.com', '9999
 
 INSERT INTO user_detail
 (first_name, last_name, role, enabled, password, email, contact_number)
-VALUES ('Anshul', 'Adhikari', 'SUPPLIER', true, '12345' 'anshul1@gmail.com', '57855745853');
+VALUES ('Anshul', 'Adhikari', 'SUPPLIER', true, '12345', 'anshul1@gmail.com', '57855745853');
 
 
 CREATE TABLE product (
