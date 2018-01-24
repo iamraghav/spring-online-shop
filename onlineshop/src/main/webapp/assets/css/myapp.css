@@ -72,4 +72,7 @@ footer {
 	height: 100px;
 }
 
-
+.jumbotron {
+	background: #ed5050;
+	color: #fff;
+}
