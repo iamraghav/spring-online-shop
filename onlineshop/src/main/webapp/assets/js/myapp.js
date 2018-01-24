@@ -69,7 +69,16 @@ if ($table.length) {
 				}
 			},
 			{
-				data : 'quantity'
+				data : 'quantity',
+				mRender: function(data,type,row) {
+					
+					if(data < 1) {
+						return '<span style="color:red; font-weight:bold">Out of Stock!</span>';
+					}
+					
+					return data;
+					
+				}
 			},
 			{
 				data: 'id',
@@ -77,8 +86,17 @@ if ($table.length) {
 				mRender: function(data, type, row) {
 				
 					var str ='';
+					
 					str += '<div class="btn-group" role="group" aria-label="View And Cart"><a title="View" class="btn btn-primary" href="'+window.contextRoot+ '/show/'+data+'/product"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>';
-					str += '<a title="Add to Cart" class="btn btn-success" href="'+window.contextRoot+ '/cart/add/'+data+'/product"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></div>';
+					
+					if(row.quantity < 1) {
+						str += '<a title="Add to Cart" class="btn btn-success disabled" href="javascript:void(0)"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></div>';
+					}
+					else {
+						str += '<a title="Add to Cart" class="btn btn-success" href="'+window.contextRoot+ '/cart/add/'+data+'/product"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></div>';
+					}
+					
+					
 				
 					return str;
 				}
