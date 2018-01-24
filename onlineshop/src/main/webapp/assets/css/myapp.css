@@ -76,3 +76,11 @@ footer {
 	background: #ed5050;
 	color: #fff;
 }
+
+.panel-heading h4 {
+	color: #fff; !important
+}
+
+.help-block {
+	color: #ff0000;
+}

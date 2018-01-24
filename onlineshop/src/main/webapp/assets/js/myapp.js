@@ -13,6 +13,10 @@ $(function() {
 	case 'All Products':
 		$('#listProducts').addClass('active');
 		break;
+		
+	case 'Manage Products':
+		$('#manageProducts').addClass('active');
+		break;
 
 	default:
 		if (menu == "Home")
@@ -105,4 +109,14 @@ if ($table.length) {
 		]
 
 	});
+}
+
+//dismissing the alert after 3 seconds
+var $alert = $('.alert');
+
+if($alert.lenght) {
+	
+	setTimeout(function() {
+		$alert.fadeOut('slow');
+	}, 3000)
 }

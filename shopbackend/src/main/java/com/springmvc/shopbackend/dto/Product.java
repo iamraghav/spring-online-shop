@@ -103,11 +103,11 @@ public class Product {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	public int getCategory_id() {
+	public int getCategoryId() {
 		return categoryId;
 	}
-	public void setCategory_id(int category_id) {
-		this.categoryId = category_id;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 	public int getSupplierId() {
 		return supplierId;
@@ -127,7 +127,13 @@ public class Product {
 	public void setViews(int views) {
 		this.views = views;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="
+				+ description + ", unitPrice=" + unitPrice + ", quantity=" + quantity + ", active=" + active
+				+ ", categoryId=" + categoryId + ", supplierId=" + supplierId + ", purchases=" + purchases + ", views="
+				+ views + "]";
+	}
 	
 }
