@@ -3,8 +3,8 @@ html {
 }
 
 body {
-  padding-top: 70px;
-  height: 100%;
+	padding-top: 70px;
+	height: 100%;
 }
 
 .slide-image {
@@ -38,7 +38,8 @@ body {
 	color: #d17581;
 }
 
-..thumbnail {
+.
+.thumbnail {
 	padding: 0;
 }
 
@@ -72,15 +73,67 @@ footer {
 	height: 100px;
 }
 
+.adminDataTableImg {
+	width: 50px;
+	height: 50px;
+}
+
 .jumbotron {
 	background: #ed5050;
 	color: #fff;
 }
 
 .panel-heading h4 {
-	color: #fff; !important
+	color: #fff;
+	!
+	important
 }
 
 .help-block {
 	color: #ff0000;
 }
+
+/*Toggle Switch*/
+.switch {
+	width: 50px;
+	height:30px;
+	position: relative;
+	display: inline-block;
+}
+
+.switch input {
+	display: none;
+}
+
+.slider {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	cursor: pointer;
+	background-color: #ccc;
+	border-radius: 30px;
+	transition: .5s;
+}
+
+.slider:before {
+	position: absolute;
+	background-color: #fff;
+	height: 20px;
+	width: 20px;
+	content: "";
+	left: 5px;
+	bottom: 5px;
+	border-radius: 50%;
+	transotion: .5s;
+}
+
+input:checked + .slider {
+	background-color: #1863E6;
+}
+
+input:checked + .slider:before {
+	transform: translateX(20px);
+}
+

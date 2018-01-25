@@ -99,6 +99,9 @@
 		
 		<!-- DataTable Bootstrap JS -->
 		<script src="${js}/dataTables.bootstrap.js"></script>
+		
+		<!-- BootBox JS -->
+		<script src="${js}/bootbox.min.js"></script>
 
 		<!-- Custom JS -->
 		<script src="${js}/myapp.js"></script>
