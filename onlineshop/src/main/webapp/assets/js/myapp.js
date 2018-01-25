@@ -25,7 +25,7 @@ $(function() {
 		$('#a_' + menu).addClass('active');
 		break;
 	}
-});
+
 
 // code for jQuery dataTable
 
@@ -120,3 +120,5 @@ if($alert.lenght) {
 		$alert.fadeOut('slow');
 	}, 3000)
 }
+
+});

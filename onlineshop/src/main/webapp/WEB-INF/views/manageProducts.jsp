@@ -20,6 +20,7 @@
 					<sf:form class="form-horizontal" modelAttribute="product"
 						acrion="${contextRoot}/manage/products"
 						method="POST"
+						enctype="multipart/form-data"
 					>
 						<div class="form-group">
 							<label class="control-label col-md-4" for="name">Enter
@@ -27,6 +28,7 @@
 							<div class="col-md-8">
 								<sf:input type="text" class="form-control" id="name" path="name"
 									placeholder="Product Name" />
+								<sf:errors path="name" cssClass="help-block" element="em" />
 							</div>
 						</div>
 
@@ -36,6 +38,7 @@
 							<div class="col-md-8">
 								<sf:input type="text" class="form-control" id="brand" path="brand"
 									placeholder="Brand Name" />
+								<sf:errors path="brand" cssClass="help-block" element="em" />
 							</div>
 						</div>
 
@@ -45,6 +48,7 @@
 							<div class="col-md-8">
 								<sf:textarea class="form-control" rows="4" id="description"
 									path="description" placeholder="Product Description" />
+								<sf:errors path="description" cssClass="help-block" element="em" />
 							</div>
 						</div>
 
@@ -54,6 +58,7 @@
 							<div class="col-md-8">
 								<sf:input type="number" class="form-control" id="unitPrice"
 									path="unitPrice" placeholder="Unit Price in &#8377;" />
+								<sf:errors path="unitPrice" cssClass="help-block" element="em" />
 							</div>
 						</div>
 
@@ -63,6 +68,14 @@
 							<div class="col-md-8">
 								<sf:input type="number" class="form-control" id="quantity"
 									path="quantity" placeholder="Quantity Available" />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-4" for="file">Select Product Image: </label>
+							<div class="col-md-8">
+								<sf:input type="file" class="form-control" id="file"
+									path="file" />
 							</div>
 						</div>
 
