@@ -59,6 +59,9 @@ public class ManagementController {
 			if (operation.equals("product")) {
 				mv.addObject("message", "Product Added Successfully!");
 			}
+			else if(operation.equals("category")) {
+				mv.addObject("message", "Category Added Successfully!");
+			}
 		}
 
 		return mv;
@@ -89,6 +92,7 @@ public class ManagementController {
 	public String handleProductSubmission(@Valid @ModelAttribute("product") Product mProduct, BindingResult results,
 			Model model, HttpServletRequest request) {
 
+		// handle image validation for new products
 		if(mProduct.getId() == 0) {
 			new ProductValidator().validate(mProduct, results);
 		}
@@ -110,7 +114,7 @@ public class ManagementController {
 
 		logger.info(mProduct.toString());
 
-		// create a new product record if the id is 0
+		// create a new product if the id is 0
 		if(mProduct.getId() == 0) {
 			productDAO.add(mProduct);
 		}
@@ -146,6 +150,17 @@ public class ManagementController {
 		return (isActive) ? "You have successfully deactivated the product with id " + product.getId() + "!"
 				: "You have successfully activated the product with id " + product.getId() + "!";
 	}
+	
+	// to handle category submission
+	@RequestMapping(value="/category", method=RequestMethod.POST)
+	public String handleCategorySubmission(@ModelAttribute Category category) {
+		
+		//add new category
+		categoryDAO.add(category);
+		
+		return "redirect:/manage/products?operation=category";
+		
+	}
 
 	
 	// returning categories for all the request
@@ -154,6 +169,12 @@ public class ManagementController {
 
 		return categoryDAO.list();
 
+	}
+	
+	@ModelAttribute("category")
+	public Category getCategory() {
+		
+		return new Category();
 	}
 
 }
