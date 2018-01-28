@@ -16,7 +16,7 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(name = "user_id")
-	private String userId;
+	private int userId;
 	@Column(name = "address_line_one")
 	private String addressLineOne;
 	@Column(name = "address_line_two")
@@ -39,10 +39,10 @@ public class Address {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 	public String getAddressLineOne() {
