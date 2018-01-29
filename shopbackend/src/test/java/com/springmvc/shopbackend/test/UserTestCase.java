@@ -92,17 +92,84 @@ public class UserTestCase {
 	 * assertEquals("Failed to add user!", true, userDAO.addUser(user)); }
 	 */
 
-	@Test
-	public void testUpdateCart() {
-		// fetch the user by email
+	/*
+	 * @Test public void testUpdateCart() { // fetch the user by email user =
+	 * userDAO.getByEmail("hr@gmail.com");
+	 * 
+	 * // get the cart of the user cart = user.getCart();
+	 * 
+	 * cart.setGrandTotal(55550); cart.setCartLines(2);
+	 * 
+	 * assertEquals("failed to update the cart!", true, userDAO.updateCart(cart)); }
+	 */
+
+	/*
+	 * @Test public void testAddAddress() {
+	 * 
+	 * // we need to add an user user = new User(); user.setFirstName("Hrithik");
+	 * user.setLastName("Roshan"); user.setEmail("hr@gmail.com");
+	 * user.setContactNumber("0555555555"); user.setRole("USER");
+	 * user.setPassword("12345678"); assertEquals("Failed to add user!", true,
+	 * userDAO.addUser(user));
+	 * 
+	 * // we are going to add the address address = new Address();
+	 * address.setAddressLineOne("101/B Jadoo Society Krissh Nagara");
+	 * address.setAddressLineTwo("Near Kaabil Store"); address.setCity("Mumbai");
+	 * address.setState("Maharashtra"); address.setCountry("India");
+	 * address.setPostalCode("40001"); address.setBilling(true);
+	 * 
+	 * // attach the address to the user address.setUser(user);
+	 * 
+	 * assertEquals("Failed to add address!", true, userDAO.addAddress(address));
+	 * 
+	 * // we will also add shipping address address = new Address();
+	 * address.setAddressLineOne("201/B Jadoo Society Kishan Kanhaiya Nagara");
+	 * address.setAddressLineTwo("Near Kudrat Store"); address.setCity("Mumbai");
+	 * address.setState("Maharashtra"); address.setCountry("India");
+	 * address.setPostalCode("40001"); // set shipping to true
+	 * address.setShipping(true);
+	 * 
+	 * // attach the address to the user address.setUser(user);
+	 * 
+	 * assertEquals("Failed to add shipping address!", true,
+	 * userDAO.addAddress(address)); }
+	 */
+
+/*	@Test
+	public void testAddAddress() {
+
 		user = userDAO.getByEmail("hr@gmail.com");
 
-		// get the cart of the user
-		cart = user.getCart();
+		// we will also add shipping address 
+		address = new Address();
+		address.setAddressLineOne("401/B Jadoo Society Kishan Kanhaiya Nagara");
+		address.setAddressLineTwo("Near Kudrat Store");
+		address.setCity("Bangalore");
+		address.setState("Karanataka");
+		address.setCountry("India");
+		address.setPostalCode("560047");
+		// set shipping to true
+		address.setShipping(true);
 
-		cart.setGrandTotal(55550);
-		cart.setCartLines(2);
+		// attach the address to the user
+		address.setUser(user);
 
-		assertEquals("failed to update the cart!", true, userDAO.updateCart(cart));
-	}
+		assertEquals("Failed to add shipping address!", true, userDAO.addAddress(address));
+
+	}*/
+
+	
+	  /*@Test public void testGetAdresses() {
+	  
+	  user = userDAO.getByEmail("hr@gmail.com");
+	  
+	  assertEquals("Failed to fetch the list of addresses and size does not match!"
+	  , 2, userDAO.listShippingAddresses(user).size());
+	  
+	  assertEquals("Failed to fetch the billing address and size does not match!",
+	  "Mumbai", userDAO.getBillingAdress(user).getCity());
+	  
+	  }*/
+	 
+
 }

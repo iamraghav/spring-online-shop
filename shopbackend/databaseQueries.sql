@@ -1,4 +1,4 @@
---create table for category
+
 CREATE TABLE category (
 	id IDENTITY,
 	name VARCHAR(50),
@@ -9,7 +9,7 @@ CREATE TABLE category (
 
 );
 
---create table for user detail
+
 CREATE TABLE user_detail (
 	id Identity,
 	first_name VARCHAR(50),
@@ -19,7 +19,7 @@ CREATE TABLE user_detail (
 	password VARCHAR(100),
 	email VARCHAR(100),
 	contact_number VARCHAR(15),
-	CONSTRAINT pk_user_id PRIMARY KEY (id),
+	CONSTRAINT pk_user_id PRIMARY KEY (id)
 );
 
 -- the address table to store the user billing and shipping addresses

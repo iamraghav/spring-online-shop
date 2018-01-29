@@ -116,7 +116,13 @@ public class PageController {
 		return mv;
 	}
 	
-	
+	//Having similar to our flow id
+	@RequestMapping(value = "/register")
+	public ModelAndView register() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Register");
+		return mv;
+	}
 	
 	
 	
