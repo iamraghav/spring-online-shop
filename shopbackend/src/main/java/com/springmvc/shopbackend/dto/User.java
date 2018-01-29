@@ -1,5 +1,7 @@
 package com.springmvc.shopbackend.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,8 +13,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name= "user_detail")
-public class User {
-
+public class User implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3339066954014697122L;
 	/*
 	 * private fields for user
 	 * */
